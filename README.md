@@ -41,7 +41,6 @@ Below are the 5x5 patterns used to train the model. Each row shows the digit, th
 | **9** | **0** pattern with right upper side. | **9** |
 
 ## Data fragmentation
-## Data Fragmentation
 
 For optimal performance, it's crucial to ensure that data fragmentation is less than 50%. Data fragmentation refers to a situation where the training data does not adequately represent the diversity of input patterns that the model may encounter. When the model is trained on a fragmented dataset, it may learn biases or fail to generalize well, leading to inaccurate predictions.
 
@@ -93,16 +92,16 @@ To visualize the data fragmentation, consider using a pie chart or bar graph:
 +--------------------------------+
 |          Data Distribution      |
 |                                |
-|   0: █████████████████████████  (80 samples)
-|   1: ███                      (5 samples)
-|   2: ███                      (5 samples)
-|   3: ███                      (5 samples)
-|   4: ███                      (5 samples)
-|   5: ███                      (5 samples)
-|   6: ███                      (5 samples)
-|   7: ███                      (5 samples)
-|   8: ███                      (5 samples)
-|   9: ███                      (5 samples)
+|   0: ████████████████████████████  (200 samples)
+|   1: ███                      (10 samples)
+|   2: ███                      (10 samples)
+|   3: ███                      (10 samples)
+|   4: ███                      (10 samples)
+|   5: ███                      (10 samples)
+|   6: ███                      (10 samples)
+|   7: ███                      (10 samples)
+|   8: ███                      (10 samples)
+|   9: ███                      (10 samples)
 |                                |
 +--------------------------------+
 ```
