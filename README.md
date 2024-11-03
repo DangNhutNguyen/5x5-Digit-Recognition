@@ -57,22 +57,33 @@ Data fragmentation can occur in various forms:
 
 ### Example of Data Fragmentation
 
-Consider a scenario where we have the following digit representations in our training dataset:
+## Scenario: Impact of Data Fragmentation
 
-- **Digit 0**: 80 samples
-- **Digit 1**: 5 samples
-- **Digit 2**: 5 samples
-- **Digit 3**: 5 samples
-- **Digit 4**: 5 samples
-- **Digit 5**: 5 samples
-- **Digit 6**: 5 samples
-- **Digit 7**: 5 samples
-- **Digit 8**: 5 samples
-- **Digit 9**: 5 samples
+**Example Scenario:**
 
-In this case, the model is predominantly trained on the digit `0`, resulting in significant fragmentation. The imbalance shows that:
+Imagine you are developing a digit recognition model that is trained using the following data distribution:
 
-- **Fragmentation**: The training data for digits `1` through `9` only accounts for 20% of the dataset, which is well below the threshold needed for accurate recognition.
+- **Digit 0**: 200 samples
+- **Digit 1**: 10 samples
+- **Digit 2**: 10 samples
+- **Digit 3**: 10 samples
+- **Digit 4**: 10 samples
+- **Digit 5**: 10 samples
+- **Digit 6**: 10 samples
+- **Digit 7**: 10 samples
+- **Digit 8**: 10 samples
+- **Digit 9**: 10 samples
+
+In this case, the model has a strong bias towards recognizing the digit `0` due to its overwhelming representation in the training dataset. The fragmentation in the dataset can be assessed as follows:
+
+- **Fragmentation Calculation**: 
+  - Total samples = 200 + 10 × 9 = 290
+  - Fragmentation percentage for digit `0` = (200 / 290) × 100 ≈ 69% (which is above the 50% threshold).
+  
+As a result, the model is likely to perform well when predicting the digit `0`, but poorly on all other digits. This fragmentation means:
+
+- When a user draws the digit `1`, the model may misclassify it as `0` because it has learned to heavily associate the pattern of `0` with the most common sample.
+- Similarly, it may confuse `3` with `0` due to the lack of distinctive learning for underrepresented classes.
 
 #### Placeholder Example Visualization
 
